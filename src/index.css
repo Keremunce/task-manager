@@ -1,13 +1,292 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --default-font-size: 62.5%;
+  --font-size: 1.6rem;
+  --font-family: 'Poppins', sans-serif;
+  --bg-color: #fff;
+  --board-bgcolor: #EEF2F5;
+  --board-radius: 1rem;
+  --board-padding: 2.4rem;
+  --card-radius: 2rem;
+  --text-color: #0D1B2A;
+  --text-secondary: #707070;
+  --success-clr: #4CAF50;
+  --danger-clr: #F44336;
+  --warning-clr: #FFC107;
+
+  --white: #fff;
+
+  --operation-radius: 10rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  position: relative;
+}
+
+html {
+  font-size: var(--default-font-size);
+
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-size: var(--font-size);
+
+}
+
+.App {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  place-content: start;
+}
+
+.headerWrapper {
+  display: flex;
+}
+
+.rightside {
+  display: flex;
+  margin-left: auto;
+  gap: 3.8rem;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer input {
+  border: none;
+  background-color: var(--white);
+  /* outline: none;x */
+  padding: 2rem 0 2rem 3rem;
+  font-size: var(--font-size);
+}
+
+.inputContainer input::placeholder {
+  color: var(--text-secondary);
+}
+
+.inputContainer svg {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  color: var(--text-secondary);
+}
+.pageTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pageTitle p {
+  font-size: 2.9rem;
+  font-weight: medium;
+}
+.pageTitle button {
+    padding:  1rem 2rem;
+    border: none;
+    display: inline-flex;
+    gap: .5rem;
+    border-radius: .5rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+.profileWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  height: 3rem;
+}
+
+.profileWrapper img {
+  object-fit: cover;
+  aspect-ratio: 1 /1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.boardsWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.board {
+  background-color: var(--board-bgcolor);
+  border-radius: var(--board-radius);
+  padding: var(--board-padding);
+  display: grid;
+  gap: 2.6rem;
+  flex: 0 0 30%;
+}
+
+.boardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: var(--bg-color);
+  border-radius: var(--card-radius);
+  padding: var(--board-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: .8rem;
+}
+
+.card>div {
+  width: 100%;
+}
+
+.card input,
+.card textarea {
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cardHeader .status {
+  font-size: .8rem;
+  color: var(--text-secondary);
+  position: relative;
+  text-transform: uppercase;
+  display: inline-flex;
+  gap: .5rem;
+}
+
+.cardHeader .status span {
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+}
+
+.board.boardtodo .cardHeader .status span {
+  background-color: var(--danger-clr);
+}
+
+.board.boardinprogress .cardHeader .status span {
+  background-color: var(--warning-clr);
+}
+
+.board.boardcompleted .cardHeader .status span {
+  background-color: var(--success-clr);
+}
+
+.cardHeader .editWrapper {
+  font-size: 2rem;
+  position: relative;
+}
+
+.dropdownWrapper {
+  background-color: var(--bg-color);
+  border-radius: var(--board-radius);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-size: 1.2rem;
+  position: absolute;
+  overflow: hidden;
+}
+
+.dropdownWrapper .option {
+  padding: 1rem 4rem 1rem 2rem;
+  display: flex;
+  justify-content: start;
+  gap: .5rem;
+  align-items: center;
+}
+
+.dropdownWrapper .option:first-child {
+  border-bottom: 1px solid var(--board-bgcolor);
+}
+
+.dropdownWrapper .option.delete {
+  color: var(--danger-clr);
+}
+
+.dropdownWrapper .option:hover {
+  background-color: var(--board-bgcolor);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  place-content: start;
+}
+
+.cardContent .cardTitle {
+  font-weight: medium;
+  font-size: 1.8rem;
+}
+
+.cardContent .cardDescription {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+.footer{
+  position: fixed;
+  bottom: 2%;
+  left: 50%; 
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: var(--text-color);
+}
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.buttonsWrapper > button{
+  flex: 1;
+  border-radius: var(--board-radius);
+  padding: .8rem 0;
+  border: none;
+}
+.buttonsWrapper > button.saveBtn{
+  background-color: var(--success-clr);
+  color: var(--white);
+}
+.buttonsWrapper > button.cancelBtn{
+  background-color: var(--board-bgcolor);
+}
+@media (max-width: 768px) {
+  .boardsWrapper{
+    flex-direction: column;
+  }
+  .board{
+    width: 100%;
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Task Manager",
+  "name": "An intuitive task management app created by Kerem Unce. Effortlessly organize, edit, and track your tasks with a streamlined interface and powerful features.",
   "icons": [
     {
       "src": "favicon.ico",
