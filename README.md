@@ -3,7 +3,6 @@
 A modern and efficient **Task Manager** web application designed to help users organize, prioritize, and track their daily tasks.  
 Built with **React**, this app focuses on a clean, intuitive interface and smooth user interactions — perfect for productivity lovers.
 
-![Preview](assets/preview.png) <!-- replace with your project screenshot -->
 
 ---
 
