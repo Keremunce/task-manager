@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# ✅ Task Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and efficient **Task Manager** web application designed to help users organize, prioritize, and track their daily tasks.  
+Built with **React**, this app focuses on a clean, intuitive interface and smooth user interactions — perfect for productivity lovers.
 
-## Available Scripts
+![Preview](assets/preview.png) <!-- replace with your project screenshot -->
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
+- 📝 Create, edit, and delete tasks  
+- 📅 Mark tasks as completed or pending  
+- 🧩 Filter and sort tasks by category or priority  
+- 🌗 Light & dark theme support  
+- ⚡ Persistent local storage for offline use  
+- 💻 Responsive design optimized for all screen sizes  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧰 Tech Stack
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-555555?logo=react&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+Follow these steps to run the project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clone the repository
+git clone https://github.com/Keremunce/task-manager.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Navigate into the project
+cd task-manager
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start the development server
+npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then open your browser at [http://localhost:5173](http://localhost:5173) to preview the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧩 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+task-manager/
+│
+├── src/
+│   ├── components/
+│   │   ├── TaskCard.tsx
+│   │   ├── AddTaskModal.tsx
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   │
+│   ├── pages/
+│   │   └── Home.tsx
+│   │
+│   ├── hooks/
+│   │   └── useTasks.ts
+│   │
+│   ├── utils/
+│   │   └── storage.ts
+│   │
+│   └── App.tsx
+│
+├── public/
+│   └── icons/
+│
+├── package.json
+└── vite.config.ts
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌐 Live Preview
+🔗 *Coming soon on Vercel or Netlify deployment link*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📜 License
+MIT License © [Kerem ÜNCE](https://github.com/Keremunce)
